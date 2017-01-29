@@ -9,25 +9,22 @@
 
     <TextView
         android:id="@+id/magnitude_TextView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="magnitude_TextView"
         tools:text="4.5" />
 
     <TextView
         android:id="@+id/location_TextView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="location_TextView"
         tools:text="London" />
 
     <TextView
         android:id="@+id/date_TextView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="date_TextView"
         tools:text="Feb 2.2016" />
 </LinearLayout>

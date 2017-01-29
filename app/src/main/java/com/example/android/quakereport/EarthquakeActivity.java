@@ -30,59 +30,19 @@ public class EarthquakeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.earthquake_activity);
 
-        // Create a fake list of earthquake locations.
-        /*ArrayList<String> earthquakes = new ArrayList<>();
-        earthquakes.add("San Francisco");
-        earthquakes.add("London");
-        earthquakes.add("Tokyo");
-        earthquakes.add("Mexico City");
-        earthquakes.add("Moscow");
-        earthquakes.add("Rio de Janeiro");
-        earthquakes.add("Paris");*/
-
         ArrayList<Earthquake> earthquakes = new ArrayList<>();
-        Earthquake earthquake = new Earthquake();
-
-        earthquake.setMagnitude(7.2);
-        earthquake.setPlace("San Francisco");
-        earthquake.setTime("Feb 2.2016");
-        earthquakes.add(earthquake);
-
-        earthquake.setMagnitude(7.2);
-        earthquake.setPlace("San Francisco");
-        earthquake.setTime("Feb 2.2016");
-        earthquakes.add(earthquake);
-
-        earthquake.setMagnitude(7.2);
-        earthquake.setPlace("San Francisco");
-        earthquake.setTime("Feb 2.2016");
-        earthquakes.add(earthquake);
-
-        earthquake.setMagnitude(7.2);
-        earthquake.setPlace("San Francisco");
-        earthquake.setTime("Feb 2.2016");
-        earthquakes.add(earthquake);
-
-        earthquake.setMagnitude(7.2);
-        earthquake.setPlace("San Francisco");
-        earthquake.setTime("Feb 2.2016");
-        earthquakes.add(earthquake);
-
-        earthquake.setMagnitude(7.2);
-        earthquake.setPlace("San Francisco");
-        earthquake.setTime("Feb 2.2016");
-        earthquakes.add(earthquake);
-
-        earthquake.setMagnitude(7.2);
-        earthquake.setPlace("San Francisco");
-        earthquake.setTime("Feb 2.2016");
-        earthquakes.add(earthquake);
-
-        earthquake.setMagnitude(7.2);
-        earthquake.setPlace("San Francisco");
-        earthquake.setTime("Feb 2.2016");
-        earthquakes.add(earthquake);
-
+        earthquakes.add(new Earthquake("7.2", "San Francisco", "Feb 2.2006"));
+        earthquakes.add(new Earthquake("7.2", "San Francisco", "Feb 2.2006"));
+        earthquakes.add(new Earthquake("7.2", "San Francisco", "Feb 2.2006"));
+        earthquakes.add(new Earthquake("7.2", "San Francisco", "Feb 2.2006"));
+        earthquakes.add(new Earthquake("7.2", "San Francisco", "Feb 2.2006"));
+        earthquakes.add(new Earthquake("7.2", "San Francisco", "Feb 2.2006"));
+        earthquakes.add(new Earthquake("7.2", "San Francisco", "Feb 2.2006"));
+        earthquakes.add(new Earthquake("7.2", "San Francisco", "Feb 2.2006"));
+        earthquakes.add(new Earthquake("7.2", "San Francisco", "Feb 2.2006"));
+        earthquakes.add(new Earthquake("7.2", "San Francisco", "Feb 2.2006"));
+        earthquakes.add(new Earthquake("7.2", "San Francisco", "Feb 2.2006"));
+        earthquakes.add(new Earthquake("7.2", "San Francisco", "Feb 2.2006"));
 
         // Find a reference to the {@link ListView} in the layout
         ListView earthquakeListView = (ListView) findViewById(R.id.list);

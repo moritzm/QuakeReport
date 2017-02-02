@@ -15,11 +15,18 @@
         tools:text="4.5" />
 
     <TextView
-        android:id="@+id/location_TextView"
+        android:id="@+id/location_offset_TextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        tools:text="London" />
+        tools:text="74km NW of" />
+
+    <TextView
+        android:id="@+id/location_primary_TextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:text="Rumoi, Japan" />
 
     <TextView
         android:id="@+id/date_TextView"

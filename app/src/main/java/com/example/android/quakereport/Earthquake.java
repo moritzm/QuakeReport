@@ -10,6 +10,8 @@ public class Earthquake {
     private String mLocation;
     private long mTimeInMilliseconds;
 
+    private String mUrl;
+
     public Earthquake() {
 
     }
@@ -42,5 +44,13 @@ public class Earthquake {
 
     public long getTime() {
         return mTimeInMilliseconds;
+    }
+
+    public String getUrl() {
+        return mUrl;
+    }
+
+    public void setUrl(String Url) {
+        this.mUrl = Url;
     }
 }

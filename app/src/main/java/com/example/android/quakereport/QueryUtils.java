@@ -60,14 +60,10 @@ public final class QueryUtils {
                 JSONObject item = jsonArray.getJSONObject(i);
                 JSONObject properties = item.getJSONObject("properties");
 
-                long time = properties.getLong("time");
-                dateObject = new Date(time);
-                String dateToDisplay = dateFormat.format(dateObject);
-
                 Earthquake earthquake = new Earthquake();
                 earthquake.setMagnitude(String.valueOf(properties.getDouble("mag")));
                 earthquake.setLocation(properties.getString("place"));
-                earthquake.setTime(dateToDisplay);
+                earthquake.setTime(properties.getLong("time"));
 
                 earthquakes.add(earthquake);
             }

@@ -16,8 +16,11 @@
 package com.example.android.quakereport;
 
 import android.app.LoaderManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.Loader;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -42,14 +45,27 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderManag
     private TextView mEmptyStateTextView;
 
     private ProgressBar mProgressBar;
+    private boolean mIsConnected;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.earthquake_activity);
 
+        checkNetwork();
         setupView();
-        getLoaderManager().initLoader(0, null, this);
+        if(mIsConnected) {
+            getLoaderManager().initLoader(0, null, this);
+        }
+    }
+
+    private void checkNetwork() {
+        ConnectivityManager cm =
+                (ConnectivityManager)this.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        mIsConnected = activeNetwork != null &&
+                activeNetwork.isConnectedOrConnecting();
     }
 
     private void setupView() {
@@ -61,6 +77,11 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderManag
         earthquakeListView.setEmptyView(mEmptyStateTextView);
 
         mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
+
+        if(!mIsConnected) {
+            mProgressBar.setVisibility(View.GONE);
+            mEmptyStateTextView.setText(R.string.no_internet);
+        }
 
         // Create a new adapter that takes an empty list of earthquakes as input
         mAdapter = new EarthquakeAdapter(this, new ArrayList<Earthquake>());

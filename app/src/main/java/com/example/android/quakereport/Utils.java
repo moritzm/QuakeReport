@@ -1,5 +1,6 @@
 package com.example.android.quakereport;
 
+import android.text.TextUtils;
 import android.util.Log;
 
 import org.json.JSONArray;
@@ -50,6 +51,10 @@ public final class Utils {
             jsonResponse = makeHttpRequest(url);
         } catch (IOException e) {
             Log.e(LOG_TAG, "Error closing input stream", e);
+        }
+
+        if(TextUtils.isEmpty(jsonResponse)){
+            return null;
         }
 
         // Extract relevant fields from the JSON response and create an {@link Event} object
